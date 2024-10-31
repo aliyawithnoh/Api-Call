@@ -4,8 +4,12 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background: #0c052e;
+  font-family: 'Courier New', Courier, monospace;
+  background:linear-gradient(#010718c5,#010718c5),  url(rain.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .search-container {
@@ -13,10 +17,15 @@ body {
   margin: 20px;
 }
 
+h1{
+  color: #0fffaf;
+  padding-bottom: 10px;
+}
+
 #search {
   padding: 10px;
   width: 300px;
-  color: #fff;
+  color: #0c052e;
   box-shadow: 0 0 8px 3px #0fffeb ;
 }
 
@@ -24,6 +33,7 @@ button{
   padding: 5px;
   margin-left:10px ;
   border: solid 1px #0fffeb;
+  background: #0c052e;
   color: #fff;
   transition: .5s;
 }
@@ -75,20 +85,41 @@ button:hover{
 .modal-content {
   position: relative;
   padding: 20px;
-  background-color: #fff;
+  background-color: #0c052e;
   max-width: 600px;
+  border-radius: 10%;
 }
 
 .modal img {
   width: 100%;
+  border-radius: 10%;
+  box-shadow: 0 0 10px 2px #05c293 ;
+}
+
+#modal-info{
+  color: #fff;
+  margin: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#modal-info p, h2, a{
+  padding-bottom: 3px;
+}
+
+a:link{
+  color: #0fffaf;
+  text-decoration: none;
 }
 
 .close {
   position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 30px;
+  top: 40px;
+  right: 25px;
+  font-size: 60px;
   font-weight: bold;
-  color: #000;
+  color: #0fffaf;
   cursor: pointer;
+  z-index: 10000;
 }
