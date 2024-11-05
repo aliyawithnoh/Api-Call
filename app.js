@@ -1,4 +1,4 @@
-const API_KEY = '46819647-e01ced3afe04f6b327987722d'; // Replace with your Pixabay API key
+const API_KEY = '46819647-e01ced3afe04f6b327987722d'; 
 const gallery = document.getElementById('gallery');
 const modal = document.getElementById('modal');
 const modalImage = document.getElementById('modal-image');
@@ -7,7 +7,7 @@ const closeModal = document.getElementById('close');
 
 // Fetch random images and display them on page load
 function fetchRandomImages() {
-    fetch(`https://pixabay.com/api/?key=${API_KEY}&image_type=photo&per_page=36`) // Fetch 36 random images
+    fetch(`https://pixabay.com/api/?key=${API_KEY}&image_type=photo&per_page=36`) // Fetch 
         .then(response => response.json())
         .then(data => {
             gallery.innerHTML = ''; // Clear the gallery
@@ -18,13 +18,12 @@ function fetchRandomImages() {
         .catch(err => console.error(err));
 }
 
-// Fetch images based on the search term
 document.getElementById('search-btn').addEventListener('click', () => {
     const searchTerm = document.getElementById('search').value;
     fetchImages(searchTerm);
 });
 
-// Fetch images matching the search term
+// matching the search term
 function fetchImages(query) {
     fetch(`https://pixabay.com/api/?key=${API_KEY}&q=${encodeURIComponent(query)}&image_type=photo&per_page=12`)
         .then(response => response.json())
