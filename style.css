@@ -148,10 +148,12 @@ button:focus {
 
 .modal-content {
   display: flex;
-  padding: 3rem;
+  padding: 2rem;
   background: linear-gradient(135deg, #130547e3, #351552e3), url(jellyfish.jpg);
-  max-width: 60rem;
+  max-width: 55rem;
+  max-height: 33rem;
   border-radius: 25px;
+  overflow: hidden;
 }
 
 .modal img {
