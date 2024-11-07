@@ -3,13 +3,33 @@
   padding: 0;
 }
 
+.doto {
+  font-family: "Doto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight:600;
+  font-style: normal;
+  font-variation-settings:
+    "ROND" 0;
+}
+
 body {
   font-family: 'Courier New', Courier, monospace;
-  background:linear-gradient(#010718c5,#010718c5),  url(rain.jpg);
-  background-position: center;
+  background: linear-gradient(135deg, #130547, #351552); 
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  color: #fff; 
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3); 
+  z-index: -1; 
 }
 
 .search-container {
@@ -22,36 +42,75 @@ h1{
   padding-bottom: 10px;
 }
 
+.search-container {
+  text-align: center;
+  margin: 40px auto;
+}
+
+h1 {
+  color: #0fffaf;
+  font-size: 3rem; 
+  text-align: center;
+  margin-bottom: 30px; 
+  font-family: 'Arial', sans-serif; 
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 3px; 
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4); 
+}
+
+
 #search {
-  padding: 10px;
-  width: 300px;
-  color: #0c052e;
-  box-shadow: 0 0 8px 3px #0fffeb ;
+  padding: 12px 15px;
+  width: 350px;
+  color: #c9c9c9;
+  background: #00000093;
+  border: 2px solid #0fffeb;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 
-button{
-  padding: 5px;
-  margin-left:10px ;
-  border: solid 1px #0fffeb;
-  background: #0c052e;
+#search:focus {
+  outline: none;
+  border-color: #05c293;
+  box-shadow: 0 0 12px rgba(5, 194, 147, 0.7);
+}
+
+
+button {
+  padding: 12px 20px;
+  margin-left: 10px;
+  border: 2px solid #0fffeb;
+  background: #05c293;
   color: #fff;
-  transition: .5s;
+  font-size: 1.1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-button:hover{
-  box-shadow: 0 0 10px 2px #0fffeb ;
+button:hover {
+  background-color: #0fffeb;
+  color: #0c052e;
+  box-shadow: 0 0 12px rgba(5, 194, 147, 0.5);
 }
 
+button:focus {
+  outline: none;
+  box-shadow: 0 0 12px rgba(5, 194, 147, 0.7);
+}
 .gallery {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); 
+  grid-template-columns: repeat(5, 1fr); 
   gap: 10px; 
   padding: 10px;
 }
 
 .gallery img {
   width: 100%; 
-  height: 90%;
+  height: 85%;
   cursor: pointer;
   border: #05c293 solid 2px;
   border-radius: 10%;
