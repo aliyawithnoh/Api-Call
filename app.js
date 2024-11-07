@@ -24,8 +24,15 @@ document.getElementById('search-btn').addEventListener('click', () => {
 });
 
 // matching the search term
+// Fetch images based on the search term
+document.getElementById('search-btn').addEventListener('click', () => {
+    const searchTerm = document.getElementById('search').value;
+    fetchImages(searchTerm);
+});
+
+// Fetch images matching the search term
 function fetchImages(query) {
-    fetch(`https://pixabay.com/api/?key=${API_KEY}&q=${encodeURIComponent(query)}&image_type=photo&per_page=12`)
+    fetch(`https://pixabay.com/api/?key=${API_KEY}&q=${encodeURIComponent(query)}&image_type=photo&per_page=36`)
         .then(response => response.json())
         .then(data => {
             gallery.innerHTML = ''; // Clear the gallery
@@ -36,6 +43,8 @@ function fetchImages(query) {
         .catch(err => console.error(err));
 }
 
+
+
 // Display a single image in the gallery
 function displayImage(image) {
     const imgElement = document.createElement('img');
@@ -45,11 +54,18 @@ function displayImage(image) {
     gallery.appendChild(imgElement);
 }
 
+
+// Open the modal with image details
 // Open the modal with image details
 function openModal(image) {
     modal.style.display = 'block';
     modalImage.src = image.largeImageURL;
-    modalInfo.innerHTML = `<h2>${image.user}</h2><p>${image.tags}</p><a href="${image.pageURL}" target="_blank">View on Pixabay</a>`;
+    modalInfo.innerHTML = `
+        <h2>Photographer: ${image.user}</h2>
+        <p><strong>Description:</strong> ${image.tags}</p>
+        <p><strong>Likes:</strong> ${image.likes} | <strong>Downloads:</strong> ${image.downloads}</p>
+        <a href="${image.pageURL}" target="_blank">View on Pixabay</a>
+    `;
 }
 
 // Close the modal

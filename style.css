@@ -5,8 +5,9 @@
 
 .doto {
   font-family: "Doto", sans-serif;
+  font-size: 5rem;
   font-optical-sizing: auto;
-  font-weight:600;
+  font-weight:700;
   font-style: normal;
   font-variation-settings:
     "ROND" 0;
@@ -14,7 +15,7 @@
 
 body {
   font-family: 'Courier New', Courier, monospace;
-  background: linear-gradient(135deg, #130547, #351552); 
+  background: linear-gradient(135deg, #034257b9, #1b0331da), url(leaves.jpg); 
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -40,6 +41,8 @@ body::before {
 h1{
   color: #0fffaf;
   padding-bottom: 10px;
+  background-color: #0c052e93;
+  box-shadow: 0 0 10px 1px #b12eee ;
 }
 
 .search-container {
@@ -101,12 +104,14 @@ button:focus {
   outline: none;
   box-shadow: 0 0 12px rgba(5, 194, 147, 0.7);
 }
+
 .gallery {
   display: grid;
-  grid-template-columns: repeat(5, 1fr); 
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
   gap: 10px; 
   padding: 10px;
 }
+
 
 .gallery img {
   width: 100%; 
@@ -142,40 +147,46 @@ button:focus {
 }
 
 .modal-content {
-  position: relative;
-  padding: 20px;
-  background-color: #0c052e;
-  max-width: 600px;
-  border-radius: 10%;
+  display: flex;
+  padding: 3rem;
+  background: linear-gradient(135deg, #130547e3, #351552e3), url(jellyfish.jpg);
+  max-width: 60rem;
+  border-radius: 25px;
 }
 
 .modal img {
-  width: 100%;
+  width: 50%;
   border-radius: 10%;
   box-shadow: 0 0 10px 2px #05c293 ;
 }
 
 #modal-info{
-  color: #fff;
-  margin: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding-left:2rem ;
+  /* background: #06032471; */
 }
 
-#modal-info p, h2, a{
-  padding-bottom: 3px;
-}
-
-a:link{
+#modal-info h2 {
+  font-size: 2rem;
   color: #0fffaf;
-  text-decoration: none;
+  margin-bottom: 10px;
+}
+
+#modal-info p {
+  color: #fff;
+  margin: 5px 0;
+  font-size: 1.8rem;
+}
+
+#modal-info a {
+  color: #0fffaf;
+  font-weight: bold;
+  margin-top: 1rem;
 }
 
 .close {
   position: absolute;
-  top: 40px;
-  right: 25px;
+  top: 50px;
+  right: 85px;
   font-size: 60px;
   font-weight: bold;
   color: #0fffaf;
