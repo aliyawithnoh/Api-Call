@@ -5,7 +5,7 @@ const modalImage = document.getElementById('modal-image');
 const modalInfo = document.getElementById('modal-info');
 const closeModal = document.getElementById('close');
 
-// Fetch random images and display them on page load
+// Fetch random images and display 
 function fetchRandomImages() {
     fetch(`https://pixabay.com/api/?key=${API_KEY}&image_type=photo&per_page=36`) // Fetch 
         .then(response => response.json())
@@ -23,19 +23,12 @@ document.getElementById('search-btn').addEventListener('click', () => {
     fetchImages(searchTerm);
 });
 
-// matching the search term
-// Fetch images based on the search term
-document.getElementById('search-btn').addEventListener('click', () => {
-    const searchTerm = document.getElementById('search').value;
-    fetchImages(searchTerm);
-});
-
 // Fetch images matching the search term
 function fetchImages(query) {
     fetch(`https://pixabay.com/api/?key=${API_KEY}&q=${encodeURIComponent(query)}&image_type=photo&per_page=36`)
         .then(response => response.json())
         .then(data => {
-            gallery.innerHTML = ''; // Clear the gallery
+            gallery.innerHTML = ''; 
             data.hits.forEach(image => {
                 displayImage(image);
             });
@@ -44,8 +37,6 @@ function fetchImages(query) {
 }
 
 
-
-// Display a single image in the gallery
 function displayImage(image) {
     const imgElement = document.createElement('img');
     imgElement.src = image.webformatURL;
@@ -54,8 +45,6 @@ function displayImage(image) {
     gallery.appendChild(imgElement);
 }
 
-
-// Open the modal with image details
 // Open the modal with image details
 function openModal(image) {
     modal.style.display = 'block';
@@ -68,17 +57,15 @@ function openModal(image) {
     `;
 }
 
-// Close the modal
 closeModal.addEventListener('click', () => {
     modal.style.display = 'none';
 });
 
-// Close the modal if clicking outside
+
 window.addEventListener('click', (event) => {
     if (event.target === modal) {
         modal.style.display = 'none';
     }
 });
 
-// Call the function to fetch and display random images on page load
 fetchRandomImages();
